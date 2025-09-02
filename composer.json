@@ -1,20 +1,24 @@
 {
-	"name": "keycdn/keycdn-api",
-	"description": "PHP Library for the KeyCDN API",
-	"type": "library",
-	"license": "MIT",
-	"homepage": "https://www.keycdn.com",
-	"support": {
-        	"email": "support@keycdn.com",
-        	"source": "http://www.github.com/keycdn/php-keycdn-api"
-	},	
-	"require": { 
-		"php": ">=5.3.0",
-		"ext-curl": "*"
-	},
-	"autoload": {
-		"psr-0": {
-			"": "src/"
-		}
-	}
+    "name": "keycdn/keycdn-api",
+    "description": "PHP Library for the KeyCDN API",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://www.keycdn.com",
+    "support": {
+        "email": "support@keycdn.com",
+        "source": "http://www.github.com/keycdn/php-keycdn-api"
+    },
+    "require": {
+        "php": ">=7.4.0",
+        "psr/http-client": "^1.0",
+        "php-http/discovery": "^1.18",
+        "ext-curl": "*",
+        "psr/http-client-implementation": "*",
+        "psr/http-factory-implementation": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "KeyCDN\\": "src/"
+        }
+    }
 }

@@ -8,7 +8,7 @@ PHP Library for the KeyCDN API
 Please contact us if you got any questions or if you need more functionality: [KeyCDN Support](https://www.keycdn.com/contacts)
 
 ## Requirements
-- PHP 5.3 or above
+- PHP 7.4 or above
 - PHP Curl Extension
 
 ## Usage
@@ -18,16 +18,16 @@ Please contact us if you got any questions or if you need more functionality: [K
 require 'path_to_repo/src/KeyCDN.php';
 
 // create the REST object
-$keycdn_api = new KeyCDN('your_api_key');
+$keycdn_api = new KeyCDN\KeyCDN('your_api_key');
 
 // get zone information
 $keycdn_api->get('zones.json');
 
 
 // change zone name and check if successfull
-$result = $keycdn_api->post('zones/123.json', array(
+$result = $keycdn_api->post('zones/123.json', [
     'name' => 'newzonename',
-));
+]);
 
 
 // convert json-answer into an array
@@ -43,11 +43,11 @@ if ($answer['status'] == 'success') {
 
 ```php
 // get traffic stats for the last 30 days
-$result = $keycdn_api->get('reports/traffic.json', array(
+$result = $keycdn_api->get('reports/traffic.json', [
     'zone_id' => 123,
     'start'   => Carbon::now('UTC')->subDays(30)->timestamp,
     'end'     => Carbon::now('UTC')->timestamp
-));
+]);
 
 // convert json-answer into an array
 $answer = json_decode($result, true);
@@ -70,9 +70,9 @@ if ($answer['status'] == 'success') {
 ### single or bulk url purge
 
 ```php
-$result = $keycdn->delete('zones/purgeurl/{zone_id}.json', array(
-    'urls' => array('foo-1.kxcdn.com/bar1.jpg','foo-1.kxcdn.com/bar2.jpg'),
-));
+$result = $keycdn->delete('zones/purgeurl/{zone_id}.json', [
+    'urls' => ['foo-1.kxcdn.com/bar1.jpg','foo-1.kxcdn.com/bar2.jpg'],
+]);
 ```
 
 
