@@ -1,5 +1,5 @@
 {
-    "name": "keycdn/keycdn-api",
+    "name": "mabahe/keycdn-api",
     "description": "PHP Library for the KeyCDN API",
     "type": "library",
     "license": "MIT",
@@ -16,9 +16,18 @@
         "psr/http-client-implementation": "*",
         "psr/http-factory-implementation": "*"
     },
+    "require-dev": {
+      "symfony/http-client": "^5.4 || ^6.4 || ^7.4",
+      "nyholm/psr7": "^1.8"
+    },
     "autoload": {
         "psr-4": {
             "KeyCDN\\": "src/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": false
         }
     }
 }
