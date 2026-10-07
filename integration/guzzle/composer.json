@@ -1,0 +1,41 @@
+{
+    "name": "mabahe/keycdn-api-guzzle-integration",
+    "description": "Integration test: mabahe/keycdn-api used as a dependency together with Guzzle (PSR-18) and guzzlehttp/psr7 (PSR-7/PSR-17)",
+    "type": "project",
+    "license": "MIT",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../..",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "mabahe/keycdn-api": "1.0.0"
+                }
+            }
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "guzzlehttp/guzzle": "^7.8",
+        "guzzlehttp/psr7": "^2.6",
+        "mabahe/keycdn-api": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.5 || ^12.0"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "KeyCDN\\IntegrationTests\\Guzzle\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": false
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}

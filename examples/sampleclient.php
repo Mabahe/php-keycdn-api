@@ -1,7 +1,7 @@
 <?php
 
-// load lib
-require 'src/KeyCDN.php';
+// load lib (run `composer install` first)
+require __DIR__ . '/../vendor/autoload.php';
 
 // create object and pass login credentials
 $keycdn = new KeyCDN\KeyCDN('your_api_key');
